@@ -1,2 +1,2 @@
-# Mysql
-Prvi mysql kod
+# JAVA programiranje
+
