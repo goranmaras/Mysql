@@ -1,6 +1,9 @@
 drop database if exists edunovajp21;
-create database edunovajp21;
+create database edunovajp21 default character set utf8;
 use edunovajp21;
+# ovu sljedeću liniju copy/psate u command prompt
+# PRIPAZITI SAMO NA PUTANJU DATOTEKE
+# c:\xampp\mysql\bin\mysql.exe -uedunova -pedunova --default-character-set=utf8 < C:\Users\Abraxas\Documents\VisualStudioCode\skriptajp21.sql
 
 create table smjer(
     sifra int not null primary key auto_increment,
@@ -79,7 +82,7 @@ insert into smjer (cijena, upisnina, trajanje, naziv) values
 
 # primjer dobre prakse
 #4
-insert into smjer(sifra,naziv,trajanje,cijena,upisnina,verificiran) values
+insert into smjer(sifra,naziv,trajanje,cijena,upisnina, verificiran) values
 (null,'Knjigovodstveni operater',180,8900,500,true);
 
 #describe grupa;
