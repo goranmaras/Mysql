@@ -1,6 +1,9 @@
 drop database if exists fakultet;
-create database fakultet;
+create database fakultet default character set utf8;
 use fakultet;
+
+# c:\xampp\mysql\bin\mysql.exe -uedunova -pedunova --default-character-set=utf8 < C:\Users\Abraxas\Documents\VisualStudioCode\skriptafakultet.sql
+
 
 create table kolegij(
     sifra int not null primary key auto_increment,
@@ -11,10 +14,10 @@ create table kolegij(
 
 create table osoba(
     sifra int not null primary key auto_increment,
-    ime varchar(50),
-    prezime varchar(50),
-    oib char(11),
-    email varchar(50)
+    ime varchar(50) ,
+    prezime varchar(50) , 
+    oib char(11) ,
+    email varchar(50) 
 );
 
 create table predavac(
@@ -124,3 +127,14 @@ insert into prijava(rok,student) select 2,student.sifra from student where stude
 insert into prijava(rok,student) select 3,student.sifra from student where student.sifra>=19 and student.sifra<25;
 insert into prijava(rok,student) select 4,student.sifra from student where student.sifra>=25 and student.sifra<33;
 insert into prijava(rok,student) select 5,student.sifra from student where student.sifra>=33 and student.sifra<46;
+
+UPDATE osoba set oib='37322563557' where sifra = 21;
+UPDATE osoba set oib='63486345465' where sifra = 22;
+UPDATE osoba set oib='30978789213' where sifra = 23;
+
+update kolegij set cijena=cijena*1.2;
+
+update rok set datum='2019-12-7 09:00:00' where sifra =1;
+
+delete from osoba where sifra=21;
+delete from kolegij where sifra=1;
