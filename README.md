@@ -1,2 +1,2 @@
-# JAVA programiranje
+# MYSQL ZADATCI I RADOVI sa EDUNOVA
 
